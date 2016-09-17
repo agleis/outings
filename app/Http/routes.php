@@ -21,6 +21,10 @@ Route::get('filter', ['as' => 'filter', 'uses' => 'HomeController@filter']);
 
 Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
 
+Route::get('register', ['as' => 'register', 'uses' => 'UserController@register']);
+
+Route::post('register', ['as' => 'postRegister', 'uses' => 'UserController@postRegister']);
+
 Route::get('trip', ['as' => 'addTrip', 'uses' => 'TripController@create']);
 
 Route::post('trip', ['as' => 'newTrip', 'uses' => 'TripController@post']);
