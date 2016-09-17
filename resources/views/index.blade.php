@@ -24,11 +24,10 @@
                   so you can focus on the experience, not worry about
                   the logistics.</p>
                 </div>
-                <form method="get" action="search" class="form-inline">
-                  <input type="text" class="form-control search" id="searchCity"
-                    name="searchCity" placeholder="Search bathrooms in...">
-                  <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                </form>
+                <a href="{{url('register')}}" class="btn btn-primary">Sign Up Today</a>
+                &nbsp;
+                &nbsp;
+                <a href="{{url('about')}}" class="btn btn-primary">Learn More</a>
               </div>
               <!-- <div class="image-overlay"></div> -->
               <img src="img/bamboo.jpg" alt="Chania">
@@ -37,50 +36,43 @@
             <div id="img2" class="item">
               <div id="caption2" class="carousel-caption">
                 <div class="heading">
-                    <h1>On a long road trip?</h1>
+                    <h1>Outings around every corner</h1>
                 </div>
                 <div class="image-subtitle">
-                  <p>We've all had a bad rest stop experience out on the open
-                  road. Flushr aims to change that. Look miles ahead to
-                  scout out the best option for your trip,
-                  and never suffer through that nasty gas station bathroom again.
+                  <p>Start looking today for trips leaving near you. Our
+                  algorithms and highly customizable filters make it easy to
+                  find a unique experience that interests you. Whether
+                  your destination is a vibrant city or the great outdoors,
+                  if it involves motion, Outings has got you covered.
                   </p>
                 </div>
-                <form method="get" action="search" class="form-inline">
-                  <input type="text" class="form-control search"
-                    id="searchRoad" name="searchRoad"
-                    placeholder="Search for rest stops near...">
-                  <button type="submit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </button>
-                </form>
+                <a href="{{url('register')}}" class="btn btn-primary">Sign Up Today</a>
+                &nbsp;
+                &nbsp;
+                <a href="{{url('about')}}" class="btn btn-primary">Learn More</a>
               </div>
               <!-- <div class="image-overlay"></div> -->
-              <img src="img/highway.jpg" alt="Chania">
+              <img src="img/sunset.jpg" alt="Chania">
             </div>
 
             <div id="img3" class="item">
               <div id="caption3" class="carousel-caption">
                 <div class="heading">
-                    <h1>On your way to class?</h1>
+                    <h1>Group friendly</h1>
                 </div>
                 <div class="image-subtitle">
-                  <p>Flushr was created with students in mind. We all want
-                  to scout out the best bathrooms on campus for those mid-day
-                  breaks. Find the best rated restroom at your school,
-                  and contribute to the ratings for your favorites!</p>
+                  <p>Have a group, business, or organization needing
+                  to organize a trip (or perhaps many trips)? With Outings,
+                  keeping everyone informed is simple. Our administrative
+                  and organizational features handle large groups with ease.</p>
                 </div>
-                <form method="get" action="search" class="form-inline">
-                  <input type="text" class="form-control search"
-                    id="searchCollege" name="searchCollege"
-                    placeholder="Search bathrooms at...">
-                  <button type="submit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-search"></span>
-                  </button>
-                </form>
+                <a href="{{url('register')}}" class="btn btn-primary">Sign Up Today</a>
+                &nbsp;
+                &nbsp;
+                <a href="{{url('about')}}" class="btn btn-primary">Learn More</a>
               </div>
               <!-- <div class="image-overlay"></div> -->
-              <img src="img/washington_blossom.jpg" alt="Flower">
+              <img src="img/singapore.jpg" alt="Flower">
             </div>
 
           </div>

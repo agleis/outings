@@ -86,6 +86,23 @@ footer a:hover {
   padding-top: 30px;
 }
 
+.btn-default {
+  padding: 20px 10px;
+  font-size: 24px;
+  border: none;
+}
+
+.btn-primary {
+  padding: 20px 10px;
+  background-color: red;
+  font-size: 24px;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: darkred;
+}
+
 .upload-button {
   position: fixed;
   bottom: 10%;
@@ -96,4 +113,9 @@ footer a:hover {
 .upload-button .add-button {
   font-size: 2em;
   border-radius: 100%;
+}
+
+.trip-alert {
+  font-size: 1.5em;
+  margin: 30px;
 }

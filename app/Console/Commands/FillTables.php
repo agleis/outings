@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use App;
 
+use App\Tag;
+
 use Illuminate\Console\Command;
 
 class FillTables extends Command
@@ -42,5 +44,14 @@ class FillTables extends Command
       factory(App\User::class, 5)->create();
       factory(App\Group::class, 5)->create();
       factory(App\Trip::class, 5)->create();
+      $types = [
+        'Backpacking', 'Hiking', 'Canoeing', 'Cycling', 'Hanging Out',
+        'Road Trip', 'Vacation', 'Business', 'Organization', 'Other'
+      ];
+      foreach($types as $type) {
+        $tag = new Tag;
+        $tag->name = $type;
+        $tag->save();
+      }
     }
 }

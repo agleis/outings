@@ -33,6 +33,7 @@ class HomeController extends Controller
           'group_trips' => [],
           'trips' => []
         ];
+        $request->flash();
         return view('home', $return_array);
     }
 

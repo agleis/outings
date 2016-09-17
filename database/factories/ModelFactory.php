@@ -27,7 +27,8 @@ $factory->define(App\Trip::class, function (Faker\Generator $faker) {
         'description' => $faker->paragraph,
         'num_people' => $faker->numberBetween(2, 10),
         'location' => $faker->address,
-        'date' => $faker->date
+        'start' => $faker->date,
+        'end' => $faker->date
     ];
 });
 

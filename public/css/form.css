@@ -1,0 +1,28 @@
+label h3, label p {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+input[type=radio] {
+  height: 2em;
+  width: 2em;
+}
+
+.chosen {
+  z-index: 15;
+}
+
+.field {
+  /*border: 1px solid #bbb;*/
+  /*border-radius: 5px;*/
+  padding: 10px 10px;
+  margin-top: 20px;
+}
+
+.field-odd {
+  background-color: #eee;
+}
+
+.field-even {
+  background-color: #ddd;
+}

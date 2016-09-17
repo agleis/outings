@@ -5,7 +5,7 @@
   <ul class="sidebar-list" style="display:none;">
     @foreach($items as $name => $label)
       <div>
-        <input type="checkbox" class="sidebar-check" name="{{$name}}" id="{{$name}}" @if(old('name')) checked @endif>
+        <input type="checkbox" class="sidebar-check" name="{{$name}}" id="{{$name}}" @if(old($name)) checked @endif>
         <label class="label-right" for="{{$name}}">{{$label}}</label>
       </div>
     @endforeach
