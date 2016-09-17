@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-xs-5">
           <div class="title">
-            <a href="{{URL::route('index')}}"><img src="{{URL::asset('img/outings_primary_transparent.png')}}" height="70" alt="Outings"></a>
+            <a href="{{URL::route('index')}}"><img src="{{URL::asset('img/outings_primary_transparent.png')}}" height="94" alt="Outings"></a>
           </div>
         </div>
         <div class="col-xs-7">
