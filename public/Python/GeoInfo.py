@@ -81,34 +81,37 @@ def getString(address, city, state, zipcode):
     FinalString = aFinal + ' ' + bFinal + e + cFinal + ' ' + zipcode
     return FinalString
 
-LocList = ['Fredonia, NY 14063','516 E Buffalo St Ithaca, NY 14850','The white house',
-               'Yosemite national park','Cornell university']
+LocList = ['toronto, Canada','516 E Buffalo St Ithaca, NY 14850','The white house',
+               'Yosemite national park','cornell university']
 
-one_loc=True
-set_location=False
+one_loc=True #False if you want all location used, else: True.
+set_location=False 
 set_coords=True
-nloc=[0,2,4] #location number
+if one_loc:
+    nloc=[input('Enter index of location: ')] #location number
+else:
+    nloc=[0]
+    
 for n in nloc:
     cnx = mysql.connector.connect(user='root',database='outings')
     cursor = cnx.cursor(buffered=True)
     cursor2 = cnx.cursor(buffered=True)
     cursor3 = cnx.cursor(buffered=True)
     
-    cursor.execute("SELECT location FROM outings.trips")
+    cursor.execute("SELECT location FROM outings.trips WHERE id=%s" %(n))
     
-    if (not one_loc):
-        n=0
     for (location) in cursor:
         location = str(location).replace('\\n',' ')
         location = location[3:len(location)-3]
         coord=getCoords(location)
+
         if set_location:
-            cursor2.execute("UPDATE trips SET location='%s' WHERE id=%s" %(LocList[n],n+1))
+            cursor2.execute("UPDATE trips SET location='%s' WHERE id=%s" %(LocList[n-1],n))
         if set_coords:
-            cursor3.execute("UPDATE trips SET coordinates='%s' WHERE id=%s" %(coord,n+1))
+            cursor3.execute("UPDATE trips SET coordinates='%s' WHERE id=%s" %(coord,n))
         if one_loc:
             cursor.fetchall()
         n+=1
 
-
 cnx.close()
+
