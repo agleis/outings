@@ -2,6 +2,7 @@ from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
 import mysql.connector
 from mysql.connector import errorcode
+import sys
 
 def getCoords(string):
     """Takes in a string that represents an address
@@ -88,7 +89,7 @@ one_loc=True #False if you want all location used, else: True.
 set_location=False 
 set_coords=True
 if one_loc:
-    nloc=[input('Enter index of location: ')] #location number
+    nloc=[sys.argv[1]] #location number
 else:
     nloc=[0]
     
