@@ -19,7 +19,10 @@ Route::any('home', ['as' => 'home', 'uses' => 'HomeController@home']);
 
 Route::get('filter', ['as' => 'filter', 'uses' => 'HomeController@filter']);
 
+Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
+
 Route::get('trip', ['as' => 'addTrip', 'uses' => 'TripController@create']);
+
 Route::post('trip', ['as' => 'newTrip', 'uses' => 'TripController@post']);
 
 Route::get('group', ['as' => 'addGroup', 'uses' => 'GroupController@create']);
