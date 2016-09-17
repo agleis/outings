@@ -1,0 +1,7 @@
+body {
+  background: #007434 !important;
+}
+.centered {
+  margin: 0 auto;
+  margin-top: 50%;
+}

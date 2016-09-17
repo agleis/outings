@@ -18,3 +18,5 @@ Route::get('about', ['as' => 'about', 'uses' => 'IndexController@about']);
 Route::get('home', ['as' => 'home', 'uses' => 'HomeController@home']);
 
 Route::get('filter', ['as' => 'filter', 'uses' => 'HomeController@filter']);
+
+Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
