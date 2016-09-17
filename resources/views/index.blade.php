@@ -15,12 +15,14 @@
             <div id="img1" class="item active">
               <div id="caption1" class="carousel-caption">
                 <div class="heading">
-                    <h1>Need to go in the city?</h1>
+                    <h1>Plan your excursion</h1>
                 </div>
                 <div class="image-subtitle">
-                  <p>With Flushr, you never have to worry about holding it in
-                  on the subway. Find the best bathroom near you in just seconds,
-                  and rate it for others to see.</p>
+                  <p>With Outings, take the hassle out of coordinating your
+                  next adventure. Take advantage of many features designed to
+                  assist you in hammering out the details of a group outing,
+                  so you can focus on the experience, not worry about
+                  the logistics.</p>
                 </div>
                 <form method="get" action="search" class="form-inline">
                   <input type="text" class="form-control search" id="searchCity"
@@ -28,8 +30,8 @@
                   <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
                 </form>
               </div>
-              <div class="image-overlay"></div>
-              <img src="img/singapore.jpg" alt="Chania">
+              <!-- <div class="image-overlay"></div> -->
+              <img src="img/bamboo.jpg" alt="Chania">
             </div>
 
             <div id="img2" class="item">
@@ -53,7 +55,7 @@
                   </button>
                 </form>
               </div>
-              <div class="image-overlay"></div>
+              <!-- <div class="image-overlay"></div> -->
               <img src="img/highway.jpg" alt="Chania">
             </div>
 
@@ -77,7 +79,7 @@
                   </button>
                 </form>
               </div>
-              <div class="image-overlay"></div>
+              <!-- <div class="image-overlay"></div> -->
               <img src="img/washington_blossom.jpg" alt="Flower">
             </div>
 

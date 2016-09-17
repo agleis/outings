@@ -2,12 +2,19 @@
   cursor: pointer;
 }
 
-.sidebar-item {
-  padding-bottom: 20px;
+.sidebar-btn {
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .sidebar {
   margin-left: 3%;
   border: 1px #ccc solid;
   border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.sidebar-btn-placeholder {
+  height: 10px;
+  width: 100%;
 }
