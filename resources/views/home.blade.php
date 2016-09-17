@@ -11,12 +11,12 @@
       @if(Session::has('result') && Session::get('result'))
         <div class="alert alert-success fade in trip-alert">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Success!</strong> Your trip has been added to the database.
+          <strong>Success!</strong> Your {{Session::get('type')}} has been added to the database.
         </div>
       @elseif(Session::has('result') && !Session::get('result'))
         <div class="alert alert-danger fade in trip-alert">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Failure.</strong> Failed to add trip to database.
+          <strong>Failure.</strong> Failed to add {{Session::get('type')}} to database.
         </div>
       @endif
       <div class="col-xs-2 sidebar">
@@ -61,10 +61,13 @@
           </div>
         </form>
       </div>
-      <div class="col-xs-10">
+      <div class="col-xs-6 col-xs-offset-1">
         <div class="trip-container">
           <div class="trips-groups">
             @foreach($group_trips as $trip)
+              @include('includes.trip-info', ['trip' => $trip])
+            @endforeach
+            @foreach($trips as $trip)
               @include('includes.trip-info', ['trip' => $trip])
             @endforeach
           </div>

@@ -79,14 +79,14 @@
             <p>Select the group this event belongs in, or create a new one.</p>
             <div class="radio-group">
               <div class="radio-button">
-                <input type="radio" id="public" name="visibility" value="public" checked>
+                <input type="radio" id="public" class="untrigger" name="visibility" value="public" checked>
                 <label class="label-right" for="public"><h3>Public</h3><p>Make this event viewable to anyone.</p></label>
               </div>
               <div class="radio-button">
-                <input type="radio" id="private" name="visibility" value="private">
+                <input type="radio" id="private" class="trigger" name="visibility" value="private">
                 <label class="label-right" for="private"><h3>Private</h3><p>Make this event viewable only to the selected group.</p></label>
               </div>
-              <div class="selects" id="selects-groups" style="display:none;">
+              <div class="selects" id="selects-show" style="display:none;">
                 <select name="group" id="group-select" class="chosen">
                   @foreach($groups as $id => $name)
                     <option value="{{$id}}">{{$name}}</option>

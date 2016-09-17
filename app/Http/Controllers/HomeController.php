@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Trip;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -17,7 +19,7 @@ class HomeController extends Controller
     public function home() {
         $return_array = [
           'group_trips' => [],
-          'trips' => []
+          'trips' => Trip::all()
         ];
         return view('home', $return_array);
     }
