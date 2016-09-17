@@ -19,3 +19,24 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Trip::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence,
+        'group_id' => $faker->numberBetween(1, 3),
+        'description' => $faker->paragraph,
+        'num_people' => $faker->numberBetween(2, 10),
+        'location' => $faker->address,
+        'date' => $faker->date
+    ];
+});
+
+$factory->define(App\Group::class, function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->sentence,
+        'admin' => $faker->numberBetween(1, 3),
+        'founder' => $faker->numberBetween(1, 3),
+        'description' => $faker->paragraph,
+        'picture' => $faker->url
+    ];
+});
