@@ -1,0 +1,45 @@
+.navbar {
+  height: 100px;
+  padding-top: 20px;
+  border-bottom: 2px solid #a19da0;
+  min-width: 1000px;
+  margin-bottom: 0px;
+  background-color: #fff;
+}
+
+.button-nav {
+  padding-left: 0;
+  padding-right: 0;
+  z-index: 10;
+}
+
+.button-nav .btn-group .btn {
+    color: #ff0000;
+}
+
+.button-nav .btn-group ul {
+  width: 100%;
+  margin-top: -1px;
+}
+
+.affix {
+  top: 0px;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.profile-button {
+  color: #ff0000;
+  border: none;
+  background-color: #fff;
+}
+
+.profile-button .glyphicon {
+  margin-right: 5px;
+}
+
+.profile-button a:visited {
+  color: #ff0000;
+}
