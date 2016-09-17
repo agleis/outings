@@ -98,6 +98,19 @@ footer a:hover {
   font-size: 24px;
   border: none;
 }
+
 .btn-primary:hover {
   background-color: darkred;
+}
+
+.upload-button {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  font-size: 2em;
+}
+
+.upload-button .add-button {
+  font-size: 2em;
+  border-radius: 100%;
 }

@@ -2,6 +2,7 @@
 
 @section('head')
   <link rel="stylesheet" href="{{URL::asset('css/sidebar.css')}}">
+  <script src="{{URL::asset('js/home.js')}}"></script>
 @endsection
 
 @section('main')
@@ -9,6 +10,7 @@
     <div class="row main-content">
       <div class="col-xs-2 sidebar">
         <form class="sidebar-form" method="GET" action="{{URL::route('filter')}}">
+          <h2 class="sidebar-header">Filter By...</h2>
           <div class="sidebar-btn-placeholder">
             <input type="submit" class="btn sidebar-btn btn-success" value="Filter Results" id="sidebar-button" style="display:none;">
           </div>
@@ -49,46 +51,22 @@
         </form>
       </div>
       <div class="col-xs-10">
-        {{-- main code --}}
+        <div class="trip-container">
+          <div class="trips-groups">
+            @foreach($group_trips as $trip)
+              @include('includes.trip-info', ['trip' => $trip])
+            @endforeach
+          </div>
+        </div>
+      </div>
+      <div class="upload-button">
+        <div id="add-group-group" style="display:none;">
+          <label class="add-label" for="add-group">Add Group</label>
+          <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
+        </div>
+        <label class="add-label" for="add-trip">Add Trip</label>
+        <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
     </div>
   </div>
-
-  <script>
-    $(document).ready(function() {
-      $(".sidebar-list").each(function() {
-        checkChildren($(this));
-      });
-      var checks = 0;
-      $(".sidebar-title").click(function() {
-        var ul = $(this).parent().find("ul");
-        ul.toggle(200);
-      });
-      $(".sidebar-check").click(function() {
-        if($(this).is(":checked")) checks++;
-        else checks--;
-        if(checks > 0) {
-          $("#sidebar-button").show(300);
-          $(".sidebar-btn-placeholder").height(30);
-          $(".sidebar-btn-placeholder").slideDown(400);
-          checkChildren($(this).parent().parent());
-        }
-        else {
-          $("#sidebar-button").hide(300);
-          $(".sidebar-btn-placeholder").height(10);
-          $(".sidebar-btn-placeholder").slideUp(400);
-          checkChildren($(this).parent().parent());
-        }
-      });
-    });
-
-    function checkChildren(ul) {
-      var checked = false;
-      ul.children().find('.sidebar-check').each(function() {
-        if($(this).is(":checked")) checked = true;
-      });
-      if(checked) ul.parent().find('.sidebar-title').css('color', '#449d44');
-      else ul.parent().find('.sidebar-title').css('color', '#333');
-    }
-  </script>
 @endsection
