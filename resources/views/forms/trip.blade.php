@@ -61,24 +61,32 @@
           <fieldset class="field field-even form-group">
             <h2>Enter a Name</h2>
             <p>Enter a name for your trip.</p>
-            <input type="text" class="trip-input form-control" name="name">
+            <div class="row">
+              <div class="col-xs-6">
+                <input type="text" class="trip-input form-control" name="name">
+              </div>
+            </div>
             <h2>Enter a Description</h2>
-            <p>Enter any number of characters to describe your trip.</p.>
-            <textarea class="trip-input form-control" name="description"></textarea>
+            <p>Add a description for the trip.</p.>
+            <div class="row">
+              <div class="col-xs-12">
+                <textarea class="trip-input form-control" name="description"></textarea>
+              </div>
+            </div>
           </fieldset>
           <fieldset class="field field-odd form-group">
             <h2>Select the Group</h2>
             <p>Select the group this event belongs in, or create a new one.</p>
             <div class="radio-group">
               <div class="radio-button">
-                <input type="radio" id="public" name="visibility" value="public" checked>
+                <input type="radio" id="public" class="untrigger" name="visibility" value="public" checked>
                 <label class="label-right" for="public"><h3>Public</h3><p>Make this event viewable to anyone.</p></label>
               </div>
               <div class="radio-button">
-                <input type="radio" id="private" name="visibility" value="private">
+                <input type="radio" id="private" class="trigger" name="visibility" value="private">
                 <label class="label-right" for="private"><h3>Private</h3><p>Make this event viewable only to the selected group.</p></label>
               </div>
-              <div class="selects" id="selects-groups" style="display:none;">
+              <div class="selects" id="selects-show" style="display:none;">
                 <select name="group" id="group-select" class="chosen">
                   @foreach($groups as $id => $name)
                     <option value="{{$id}}">{{$name}}</option>
@@ -89,7 +97,7 @@
                   <h3>Add Group</h3>
                   <p>Select a name for the new group, and add users to it.</p>
                   <input type="text" name="group-name">
-                  <select name="users[]" class="chosen" multiple>
+                  <select data-placeholder="Choose some users..." name="users[]" class="chosen" multiple>
                     @foreach($users as $id => $name)
                       <option value="{{$id}}">{{$name}}</option>
                     @endforeach
@@ -101,33 +109,57 @@
           <fieldset class='field field-even form-group'>
             <h2>Enter a Location</h2>
             <p>Enter the trip location (e.g. 1600 Pennsylvania Ave., Yosemite National Park, etc.).</p>
-            <div class="form-text">
-              <label class="label-left" for="address">Address: </label>
-              <input type="text" class="trip-input form-control" name="address" id="address">
+            <div class="row">
+              <div class="col-xs-8">
+                <div class="form-text">
+                  <label class="label-left" for="address">Address: </label>
+                  <input type="text" class="trip-input form-control" name="address" id="address">
+                </div>
+              </div>
             </div>
-            <div class="form-text">
-              <label class="label-left" for="city">City: </label>
-              <input type="text" class="trip-input form-control" name="city" id="city">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="form-text">
+                  <label class="label-left" for="city">City: </label>
+                  <input type="text" class="trip-input form-control" name="city" id="city">
+                </div>
+              </div>
             </div>
-            <div class="form-text">
-              <label class="label-left" for="state">State: </label>
-              <input type="text" class="trip-input form-control" name="state" id="state">
+            <div class="row">
+              <div class="col-xs-1">
+                <div class="form-text">
+                  <label class="label-left" for="state">State: </label>
+                  <input maxlength="2" type="text" class="trip-input form-control" name="state" id="state">
+                </div>
+              </div>
             </div>
-            <div class="form-text">
-              <label class="label-left" for="zip">Zip: </label>
-              <input type="text" class="trip-input form-control" name="zip" id="zip">
+            <div class="row">
+              <div class="col-xs-2">
+                <div class="form-text">
+                  <label class="label-left" for="zip">Zip: </label>
+                  <input maxlength="10" type="text" class="trip-input form-control" name="zip" id="zip">
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset class="field field-odd form-group">
             <h2>Enter the Dates</h2>
             <p>Enter the dates on which your trip starts and ends.</p>
-            <div class="form-text">
-              <label class="label-left" for="trip-start">Start: </label>
-              <input type="date" class="trip-input form-control" name="trip-start" id="trip-start">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="form-text">
+                  <label class="label-left" for="trip-start">Start: </label>
+                  <input type="date" class="trip-input form-control" name="trip-start" id="trip-start">
+                </div>
+              </div>
             </div>
-            <div class="form-text">
-              <label class="label-left" for="trip-end">End: </label>
-              <input type="date" class="trip-input form-control" name="trip-end" id="trip-end">
+            <div class="row">
+              <div class="col-xs-4">
+                <div class="form-text">
+                  <label class="label-left" for="trip-end">End: </label>
+                  <input type="date" class="trip-input form-control" name="trip-end" id="trip-end">
+                </div>
+              </div>
             </div>
           </fieldset>
           <fieldset class="field field-even submit form-group">

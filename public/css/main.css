@@ -119,7 +119,20 @@ footer a:hover {
   border-radius: 100%;
 }
 
+.add-button-group div {
+  position: relative;
+  right: 0px;
+}
+
 .trip-alert {
   font-size: 1.5em;
   margin: 30px;
+}
+
+.message-form {
+  width: 100%;
+}
+
+.message-form textarea {
+  width: 70%;
 }

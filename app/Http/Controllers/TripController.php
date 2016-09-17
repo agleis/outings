@@ -61,13 +61,25 @@ class TripController extends Controller
         $zip = $request->get('zip');
         $new_address = "$address $city, $state $zip";
         $new_trip->location = $new_address;
+        $result = shell_exec("python python/GeoInfo.py $new_trip->id");
         $new_trip->start = $request->get('trip-start');
         $new_trip->end = $request->get('trip-end');
         $new_trip->save();
         if($request->has('tags')) $new_trip->tags()->sync($request->get('tags'));
         else $new_trip->tags()->sync([]);
         $result = $new_trip->save();
-        return redirect()->route('home')->with('result', $result);
+        return redirect()->route('home')->with('result', $result)->with('type', 'trip');
+    }
+
+    /**
+     * Shows the trip with Id $id
+     *
+     * @param int $id The ID of the trip to show
+     * @return \Illuminate\View\View
+     */
+    public function show($id) {
+
+        return view('trip', ['trip' => Trip::find($id)]);
     }
 
 }

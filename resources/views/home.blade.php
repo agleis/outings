@@ -11,12 +11,12 @@
       @if(Session::has('result') && Session::get('result'))
         <div class="alert alert-success fade in trip-alert">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Success!</strong> Your trip has been added to the database.
+          <strong>Success!</strong> Your {{Session::get('type')}} has been added to the database.
         </div>
       @elseif(Session::has('result') && !Session::get('result'))
         <div class="alert alert-danger fade in trip-alert">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Failure.</strong> Failed to add trip to database.
+          <strong>Failure.</strong> Failed to add {{Session::get('type')}} to database.
         </div>
       @endif
       <div class="col-xs-2 sidebar">
@@ -43,7 +43,7 @@
                 'type_hike' => 'Hiking/Backpacking',
                 'type_climb' => 'Climbing',
                 'type_road' => 'Road Trip',
-                'type_bike' => 'Cycling/Mountain Biking',
+                'type_bike' => 'Cycling',
                 'type_hang' => 'Hangout',
                 'type_other' => 'Other'
               ]
@@ -61,22 +61,31 @@
           </div>
         </form>
       </div>
-      <div class="col-xs-10">
+      <div class="col-xs-6 col-xs-offset-1">
         <div class="trip-container">
           <div class="trips-groups">
             @foreach($group_trips as $trip)
+              @include('includes.trip-info', ['trip' => $trip])
+            @endforeach
+            @foreach($trips as $trip)
               @include('includes.trip-info', ['trip' => $trip])
             @endforeach
           </div>
         </div>
       </div>
       <div class="upload-button">
-        <div id="add-group-group" style="display:none;">
-          <label class="add-label" for="add-group">Add Group</label>
-          <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
+        <div class="add-button-group" id="add-group-group" style="display:none;">
+          <div>
+            <label class="add-label" for="add-group">Add Group</label>
+            <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
+          </div>
         </div>
-        <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
-        <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
+        <div class="add-button-group">
+          <div>
+            <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
+            <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

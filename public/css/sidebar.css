@@ -18,3 +18,7 @@
   height: 10px;
   width: 100%;
 }
+
+.indent {
+  margin-left: 10px;
+}

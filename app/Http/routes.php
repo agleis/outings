@@ -26,5 +26,11 @@ Route::get('register', ['as' => 'register', 'uses' => 'UserController@register']
 Route::post('register', ['as' => 'postRegister', 'uses' => 'UserController@postRegister']);
 
 Route::get('trip', ['as' => 'addTrip', 'uses' => 'TripController@create']);
-
 Route::post('trip', ['as' => 'newTrip', 'uses' => 'TripController@post']);
+
+Route::get('group', ['as' => 'addGroup', 'uses' => 'GroupController@create']);
+Route::post('group', ['as' => 'newGroup', 'uses' => 'GroupController@post']);
+
+Route::get('group/{id}', ['as' => 'group', 'uses' => 'GroupController@show']);
+Route::get('trip/{id}', ['as' => 'trip', 'uses' => 'TripController@show']);
+Route::get('message/{id}', ['as' => 'message', 'uses' => 'MessageController@post']);

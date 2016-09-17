@@ -13,10 +13,13 @@ input[type=radio] {
 }
 
 .field {
-  /*border: 1px solid #bbb;*/
-  /*border-radius: 5px;*/
   padding: 10px 10px;
   margin-top: 20px;
+}
+
+.submit {
+  text-align: center;
+  margin: 0 auto;
 }
 
 .field-odd {
