@@ -1,5 +1,18 @@
 from geopy.geocoders import Nominatim
 from geopy.distance import great_circle
+import mysql.connector
+from mysql.connector import errorcode
+
+try:
+  cnx = mysql.connector.connect(user='root',
+                                database='outings')
+except mysql.connector.Error as err:
+  if err.errno == errorcode.ER_BAD_DB_ERROR:
+    print("Database does not exist")
+  else:
+    print(err)
+else:
+  cnx.close()
 
 def getCoords(string):
     """Takes in a string that represents an address
@@ -57,8 +70,24 @@ def getString(address, city, state, zipcode):
             bFinal+= ' '
         m+=1
             
+    cFinal=''
+    cTemp=''
+    for j in state:
+        if j.isalnum() or j==' ':
+            cTemp+=j
+    c=cTemp.split()
+    p=1
+    for i in c:
+        cFinal+= i.upper()
+        if m!=len(c):
+            cFinal+= ' '
+        p+=1
+              
     cFinal=state.upper()
+    if len(cFinal)>0 and len(bFinal)>0:
+        e=', '
+    else:
+        e=' '
     
-    FinalString = aFinal + ' ' + bFinal + ', '+ cFinal + ' ' + zipcode
+    FinalString = aFinal + ' ' + bFinal + e + cFinal + ' ' + zipcode
     return FinalString
-    
