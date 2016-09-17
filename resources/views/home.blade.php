@@ -8,6 +8,17 @@
 @section('main')
   <div class="container-fluid">
     <div class="row main-content">
+      @if(Session::has('result') && Session::get('result'))
+        <div class="alert alert-success fade in trip-alert">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Success!</strong> Your trip has been added to the database.
+        </div>
+      @elseif(Session::has('result') && !Session::get('result'))
+        <div class="alert alert-danger fade in trip-alert">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <strong>Failure.</strong> Failed to add trip to database.
+        </div>
+      @endif
       <div class="col-xs-2 sidebar">
         <form class="sidebar-form" method="GET" action="{{URL::route('filter')}}">
           <h2 class="sidebar-header">Filter By...</h2>
@@ -64,7 +75,7 @@
           <label class="add-label" for="add-group">Add Group</label>
           <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
         </div>
-        <label class="add-label" for="add-trip">Add Trip</label>
+        <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
         <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
     </div>

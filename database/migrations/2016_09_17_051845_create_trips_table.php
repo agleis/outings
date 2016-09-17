@@ -20,7 +20,8 @@ class CreateTripsTable extends Migration
             $table->integer('num_people')->nullable();
             $table->string('location');
             $table->string('coordinates')->nullable();
-            $table->timestamp('date');
+            $table->timestamp('start');
+            $table->timestamp('end');
             $table->timestamps();
         });
     }

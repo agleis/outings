@@ -1,8 +1,9 @@
 $(document).ready(function() {
+  var total_checked = 0;
   $(".sidebar-list").each(function() {
-    checkChildren($(this));
+    total_checked += checkChildren($(this));
   });
-  var checks = 0;
+  var checks = total_checked;
   $(".sidebar-title").click(function() {
     var ul = $(this).parent().find("ul");
     ul.toggle(200);
@@ -30,6 +31,7 @@ $(document).ready(function() {
     }
   });
   $("#add-trip").click(function() {
+    if($(this).html() == '<span class="glyphicon glyphicon-leaf"></span>') location.href="/trip";
     $(this).html('<span class="glyphicon glyphicon-leaf"></span>');
     var add_group = $("#add-group-group");
     $(".upload-button").find("label").show();
@@ -47,9 +49,14 @@ $(document).ready(function() {
 
 function checkChildren(ul) {
   var checked = false;
+  var num_checked = 0;
   ul.children().find('.sidebar-check').each(function() {
-    if($(this).is(":checked")) checked = true;
+    if($(this).is(":checked")) {
+      num_checked++;
+      checked = true;
+    }
   });
   if(checked) ul.parent().find('.sidebar-title').css('color', '#449d44');
   else ul.parent().find('.sidebar-title').css('color', '#333');
+  return num_checked;
 }

@@ -114,3 +114,8 @@ footer a:hover {
   font-size: 2em;
   border-radius: 100%;
 }
+
+.trip-alert {
+  font-size: 1.5em;
+  margin: 30px;
+}
