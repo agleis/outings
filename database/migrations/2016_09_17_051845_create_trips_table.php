@@ -17,8 +17,9 @@ class CreateTripsTable extends Migration
             $table->integer('group_id');
             $table->string('name');
             $table->text('descripton');
-            $table->integer('num_people');
+            $table->integer('num_people')->nullable();
             $table->string('location');
+            $table->string('coordinates')->nullable();
             $table->timestamp('date');
             $table->timestamps();
         });
