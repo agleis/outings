@@ -690,7 +690,7 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v2.1.1",
+           "version": "v2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
@@ -700,7 +700,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4dd659edadffdc2143e4753df655d866dbfeedf0",
                 "reference": "4dd659edadffdc2143e4753df655d866dbfeedf0",
-                "shasum": ""
+               "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
