@@ -29,10 +29,19 @@ $(document).ready(function() {
       checkChildren($(this).parent().parent());
     }
   });
-  $("#add-button").click(function() {
-    var add_group = $("#add-group");
-    add_group.css('top', '15%');
+  $("#add-trip").click(function() {
+    $(this).html('<span class="glyphicon glyphicon-leaf"></span>');
+    var add_group = $("#add-group-group");
+    $(".upload-button").find("label").show();
+    add_group.css('margin-bottom', '18%');
     add_group.show();
+  });
+  $("#add-trip").focusout(function() {
+    $(this).html('<span class="glyphicon glyphicon-plus"></span>');
+    var add_group = $("#add-group-group");
+    $(".upload-button").find("label").hide();
+    add_group.css('margin-bottom', '10%');
+    add_group.hide();
   });
 });
 

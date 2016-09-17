@@ -7,7 +7,31 @@
             <a href="{{URL::route('index')}}"><img src="{{URL::asset('img/outings_primary_transparent.png')}}" height="70" alt="Outings"></a>
           </div>
         </div>
-        <div class="col-xs-7"></div>
+        <div class="col-xs-7">
+          @if(Auth::check())
+            <div class="nav">
+              <div class="nav-btn">
+                <a class="btn btn-default" href="{{url('home')}}">Home</a>
+                <div class="btn-group">
+                  <a class="btn btn-default" href="#">My Groups</a>
+                  <ul class="dropdown-menu" role="menu">
+                    @foreach($groups as $group)
+                      <li><a href="{{url('home')}}">{{$group->name}}</a></li>
+                    @endforeach
+                  </ul>
+                </div>
+                <div class="btn-group">
+                  <a class="btn btn-default" href="#">My Trips</a>
+                  <ul class="dropdown-menu" role="menu">
+                    @foreach($trips as $trip)
+                      <li><a href="{{url('home')}}">{{$trip->name}}</a></li>
+                    @endforeach
+                  </ul>
+                </div>
+              </div>
+            </div>
+          @endif
+        </div>
       </div>
     </div>
     <div class="col-xs-2 col-xs-offset-1">
