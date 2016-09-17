@@ -34,5 +34,14 @@ class Trip extends Model
       return $this->hasMany('App\Comment');
     }
 
+    /**
+     * Returns the tags this thing is associated with.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function tags() {
+      return $this->belongsToMany('App\Tag');
+    }
+
 
 }

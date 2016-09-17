@@ -12,7 +12,7 @@ class CreateTripUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('trip_users', function(Blueprint $table) {
+        Schema::create('trip_user', function(Blueprint $table) {
           $table->integer('user_id');
           $table->integer('trip_id');
           $table->timestamps();
@@ -26,6 +26,6 @@ class CreateTripUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('trip_users');
+        Schema::drop('trip_user');
     }
 }
