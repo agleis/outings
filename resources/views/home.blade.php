@@ -9,6 +9,7 @@
     <div class="row main-content">
       <div class="col-xs-2 sidebar">
         <form class="sidebar-form" method="GET" action="{{URL::route('filter')}}">
+          <h2 class="sidebar-header">Filter By...</h2>
           <div class="sidebar-btn-placeholder">
             <input type="submit" class="btn sidebar-btn btn-success" value="Filter Results" id="sidebar-button" style="display:none;">
           </div>
@@ -49,7 +50,6 @@
         </form>
       </div>
       <div class="col-xs-10">
-        {{-- main code --}}
       </div>
     </div>
   </div>

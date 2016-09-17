@@ -15,7 +15,11 @@ class HomeController extends Controller
      * @return \Illuminate\View\View
      */
     public function home() {
-        return view('home');
+        $return_array = [
+          'group_trips' => [],
+          'trips' => []
+        ];
+        return view('home', $return_array);
     }
 
     /**
@@ -25,7 +29,11 @@ class HomeController extends Controller
      * @return \Illuminate\View\View
      */
     public function filter(Request $request) {
-        return view('home');
+        $return_array = [
+          'group_trips' => [],
+          'trips' => []
+        ];
+        return view('home', $return_array);
     }
 
 }
