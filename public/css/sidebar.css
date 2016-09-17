@@ -1,0 +1,13 @@
+.sidebar-title {
+  cursor: pointer;
+}
+
+.sidebar-item {
+  padding-bottom: 20px;
+}
+
+.sidebar {
+  margin-left: 3%;
+  border: 1px #ccc solid;
+  border-radius: 5px;
+}

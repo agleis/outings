@@ -1,10 +1,10 @@
 .navbar {
-  height: 100px;
+  height: 140px;
   padding-top: 20px;
   border-bottom: 2px solid #a19da0;
   min-width: 1000px;
   margin-bottom: 0px;
-  background-color: #fff;
+  background-color: rgb(55, 103, 66);
 }
 
 .button-nav {
