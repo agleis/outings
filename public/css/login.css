@@ -1,7 +1,46 @@
 body {
   background: #007434 !important;
 }
-.centered {
+
+label h3, label p {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+input[type=radio] {
+  height: 2em;
+  width: 2em;
+}
+
+input[type=text] {
   margin: 0 auto;
-  margin-top: 50%;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+.title2 {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.chosen {
+  z-index: 15;
+}
+
+.field {
+  /*border: 1px solid #bbb;*/
+  /*border-radius: 5px;*/
+  padding: 10px 10px;
+  margin-top: 20px;
+}
+
+.field-odd {
+  background-color: #eee;
+}
+
+.field-even {
+  text-align: center;
+  background-color: #ddd;
 }
