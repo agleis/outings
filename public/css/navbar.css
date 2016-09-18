@@ -7,6 +7,17 @@
   background-color: rgb(0, 116, 52);
 }
 
+.btn-nav, .btn-nav:visited {
+  background-color: rgba(0,0,0,0);
+  color: #fff;
+  font-size: 2em;
+}
+
+.btn-nav:hover, .btn-nav:active, .btn-nav:focus, .btn-nav:focus:active {
+  background-color: #00b050;
+  color: white;
+}
+
 .button-nav {
   padding-left: 0;
   padding-right: 0;
@@ -42,4 +53,8 @@
 
 .profile-button a:visited {
   color: #ff0000;
+}
+
+.glyphicon-user {
+  margin-right: 10px;
 }

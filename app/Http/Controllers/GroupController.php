@@ -19,7 +19,7 @@ class GroupController extends Controller
    */
   public function create() {
       $users = User::lists('name', 'id');
-      return view('forms.group', ['users' => $users]);
+      return view('forms.group', ['users' => $users, 'groups' => Group::lists('name', 'id')]);
   }
 
   /**

@@ -45,6 +45,7 @@
                 'type_road' => 'Road Trip',
                 'type_bike' => 'Cycling',
                 'type_hang' => 'Hangout',
+                'type_business' => 'Business',
                 'type_other' => 'Other'
               ]
             ])
@@ -63,29 +64,32 @@
       </div>
       <div class="col-xs-6 col-xs-offset-1">
         <div class="trip-container">
+          <h1>Trips You May Be Interested In</h1>
           <div class="trips-groups">
             @foreach($group_trips as $trip)
-              @include('includes.trip-info', ['trip' => $trip])
+              @include('includes.trip-info', ['trip' => $trip, 'even' => true])
             @endforeach
+            <?php $i = 0; ?>
             @foreach($trips as $trip)
-              @include('includes.trip-info', ['trip' => $trip])
+              @include('includes.trip-info', ['trip' => $trip, 'even' => $i%2])
+              <?php $i++; ?>
             @endforeach
           </div>
         </div>
       </div>
-      <div class="upload-button">
-        <div class="add-button-group" id="add-group-group" style="display:none;">
-          <div>
-            <label class="add-label" for="add-group">Add Group</label>
-            <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
-          </div>
-        </div>
-        <div class="add-button-group">
-          <div>
-            <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
-            <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
-          </div>
-        </div>
+    </div>
+  </div>
+  <div class="upload-button">
+    <div class="add-button-group" id="add-group-group" style="display:none;">
+      <div>
+        <label class="add-label" for="add-group">Add Group</label>
+        <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
+      </div>
+    </div>
+    <div class="add-button-group">
+      <div>
+        <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
+        <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
     </div>
   </div>

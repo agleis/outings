@@ -9,11 +9,12 @@
         </div>
         <div class="col-xs-7">
           @if(Auth::check())
+            <?php $groups = Auth::user()->groups; $trips = Auth::user()->trips; ?>
             <div class="nav">
               <div class="nav-btn">
-                <a class="btn btn-default" href="{{url('home')}}">Home</a>
+                <a class="btn btn-default btn-nav" href="{{url('home')}}">Home</a>
                 <div class="btn-group">
-                  <a class="btn btn-default" href="#">My Groups</a>
+                  <a class="btn btn-default btn-nav" href="#">My Groups  <span class="glyphicon glyphicon-chevron-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     @foreach($groups as $group)
                       <li><a href="{{url('home')}}">{{$group->name}}</a></li>
@@ -21,7 +22,7 @@
                   </ul>
                 </div>
                 <div class="btn-group">
-                  <a class="btn btn-default" href="#">My Trips</a>
+                  <a class="btn btn-default btn-nav" href="#">My Trips  <span class="glyphicon glyphicon-chevron-down"></span></a>
                   <ul class="dropdown-menu" role="menu">
                     @foreach($trips as $trip)
                       <li><a href="{{url('home')}}">{{$trip->name}}</a></li>
@@ -38,15 +39,15 @@
       <div class="buttons">
         @if(Auth::check())
           <div class="btn-group">
-            <button type="button" class="btn profile-button dropdown-toggle" data-toggle="dropdown">
+            <a href="{{route('profile', ['id' => Auth::user()->id])}}" class="btn btn-default btn-nav">
               <span class="glyphicon glyphicon-user"></span>My Profile
-            </button>
+            </a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="{{URL::route('profile', ['id' => Auth::user()->id])}}">Profile</a>
             </ul>
           </div>
         @else
-          <a href="{{url('register')}}" class="btn btn-default">Sign Up</a>
+          <a href="{{url('register')}}" class="btn btn-default btn-nav">Sign Up</a>
           <a href="{{url('login')}}" class="btn btn-primary">Log In</a>
         @endif
       </div>

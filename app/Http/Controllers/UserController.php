@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\User;
 
+use Auth;
+
 class UserController extends Controller
 {
 
@@ -21,6 +23,22 @@ class UserController extends Controller
     }
 
     /**
+     * Does the login
+     *
+     * @param Request $request The HTTP Request
+     * @return \Illuminate\View\View
+     */
+    public function doLogin(Request $request) {
+      $login = Auth::attempt(['email' => $request->get('username'), 'password' => $request->get('password')]);
+      if($login) {
+        return redirect()->route('home');
+      }
+      else {
+        return redirect()->route('index');
+      }
+    }
+
+    /**
      * Returns the register page
      *
      *
@@ -32,6 +50,21 @@ class UserController extends Controller
 
     public function postRegister(Request $request) {
         $user = User::create(['name' => $request->get('username'), 'email' => $request->get('email'), 'password' => $request->get('password')]);
-        return var_dump($user);
+        $login = Auth::login($user);
+        if($login) {
+          return redirect()->route('home');
+        }
+        else {
+          return redirect()->route('index');
+        }
+    }
+
+    /**
+     * Shows the user profile
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show() {
+        return view('index');
     }
 }

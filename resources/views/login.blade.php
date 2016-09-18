@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-sm-2"></div>
           <div class="col-sm-8 form-col">
-            <form class="trip-form" method="POST" action="{{url('trip')}}">
+            <form class="trip-form" method="POST" action="{{route('doLogin')}}">
               {{ csrf_field() }}
               <fieldset class="field field-even form-group">
                 <h3>Username</h3>
@@ -55,7 +55,7 @@
                     <a href="{{route('index')}}" class="btn btn-default">Back</a>
                     &nbsp;
                     &nbsp;
-                    <a href="{{url('register')}}" class="btn btn-primary">Log In</a>
+                    <input type="submit" name="submit" class="btn btn-primary" value="Log In">
                   </div>
               </fieldset>
             </form>

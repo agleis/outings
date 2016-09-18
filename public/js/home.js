@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $("#add-group").click(function() {
+    location.href="/group";
+  });
   var total_checked = 0;
   $(".sidebar-list").each(function() {
     total_checked += checkChildren($(this));
@@ -35,11 +38,11 @@ $(document).ready(function() {
     $(this).html('<span class="glyphicon glyphicon-leaf"></span>');
     var add_group = $("#add-group-group");
     $(".upload-button").find("label").show();
-    add_group.css('margin-bottom', '18%');
+    add_group.css('margin-bottom', '30%');
     add_group.show();
   });
-  $("#add-trip").focusout(function() {
-    $(this).html('<span class="glyphicon glyphicon-plus"></span>');
+  $(".container-fluid").click(function() {
+    $("#add-trip").html('<span class="glyphicon glyphicon-plus"></span>');
     var add_group = $("#add-group-group");
     $(".upload-button").find("label").hide();
     add_group.css('margin-bottom', '10%');

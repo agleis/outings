@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Trip;
+use App\Group;
 
 use Illuminate\Http\Request;
 
@@ -19,7 +20,8 @@ class HomeController extends Controller
     public function home() {
         $return_array = [
           'group_trips' => [],
-          'trips' => Trip::all()
+          'trips' => Trip::all(),
+          'groups' => Group::lists('name', 'id')
         ];
         return view('home', $return_array);
     }
@@ -33,7 +35,8 @@ class HomeController extends Controller
     public function filter(Request $request) {
         $return_array = [
           'group_trips' => [],
-          'trips' => []
+          'trips' => [],
+          'groups' => Group::lists('name', 'id')
         ];
         $request->flash();
         return view('home', $return_array);

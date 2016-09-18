@@ -12,30 +12,30 @@ footer {
   height: 250px;
 }
 
-footer a {
+footer .trip-info-link {
   border-radius: 50%;
   text-decoration: none;
   font-size: 20px;
 }
 
-a:link {
+.trip-info-link:link {
   color: #00B050;
 }
 
-a:active {
+.trip-info-link:active {
   color: #007434;
 }
 
-a:visited {
+.trip-info-link:visited {
   color: #007434;
 }
 
-a:hover {
+.trip-info-link:hover {
   color: #000000;
   text-decoration: none;
 }
 
-footer a:hover {
+footer .trip-info-link:hover {
   color: #000;
   text-decoration: none;
 }
@@ -135,10 +135,6 @@ button:focus {
   background-color: #C40000 !important;
 }
 
-.btn-default, .btn-default:visited, .btn-default:hover, .btn-default:active {
-  color: black !important;
-}
-
 .upload-button {
   position: fixed;
   bottom: 10%;
@@ -151,9 +147,12 @@ button:focus {
   border-radius: 100%;
 }
 
-.add-button-group div {
+.add-button-group > div {
+  float: right;
   position: relative;
   right: 0px;
+  top: 0px;
+  padding-top: 10px;
 }
 
 .trip-alert {
@@ -167,4 +166,21 @@ button:focus {
 
 .message-form textarea {
   width: 70%;
+}
+
+.trip-item {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.trip-item h2 {
+  margin: 0;
+}
+
+.odd {
+  background-color: #eee;
+}
+
+.even {
+  background-color: #ddd;
 }
