@@ -61,7 +61,9 @@ class TripController extends Controller
         $zip = $request->get('zip');
         $new_address = "$address $city, $state $zip";
         $new_trip->location = $new_address;
-        $result = shell_exec("python python/GeoInfo.py $new_trip->id");
+        $new_trip->save();
+        $result = system("C:\Python27\python.exe Python\\GeoInfo.py $new_trip->id");
+        return $result;
         $new_trip->start = $request->get('trip-start');
         $new_trip->end = $request->get('trip-end');
         $new_trip->save();

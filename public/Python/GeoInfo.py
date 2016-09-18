@@ -14,7 +14,7 @@ def getCoords(string):
         return coords
     except:
         return None
-    
+
 def dist(string1,string2):
     """Takes in two stings that represent addresses and
     returns the great-circle distance between the two"""
@@ -43,7 +43,7 @@ def getString(address, city, state, zipcode):
         if n!=len(a):
             aFinal+= ' '
         n+=1
-            
+
     bFinal=''
     bTemp=''
     for j in city:
@@ -59,7 +59,7 @@ def getString(address, city, state, zipcode):
         if m!=len(b):
             bFinal+= ' '
         m+=1
-            
+
     cFinal=''
     cTemp=''
     for j in state:
@@ -72,13 +72,13 @@ def getString(address, city, state, zipcode):
         if m!=len(c):
             cFinal+= ' '
         p+=1
-              
+
     cFinal=state.upper()
     if len(cFinal)>0 and len(bFinal)>0:
         e=', '
     else:
         e=' '
-    
+
     FinalString = aFinal + ' ' + bFinal + e + cFinal + ' ' + zipcode
     return FinalString
 
@@ -86,33 +86,30 @@ LocList = ['toronto, Canada','516 E Buffalo St Ithaca, NY 14850','The white hous
                'Yosemite national park','cornell university']
 
 one_loc=True #False if you want all location used, else: True.
-set_location=False 
+set_location=False
 set_coords=True
 if one_loc:
     nloc=[sys.argv[1]] #location number
 else:
     nloc=[0]
-    
+
 for n in nloc:
+    n = int(n)
     cnx = mysql.connector.connect(user='root',database='outings')
     cursor = cnx.cursor(buffered=True)
     cursor2 = cnx.cursor(buffered=True)
     cursor3 = cnx.cursor(buffered=True)
-    
+
     cursor.execute("SELECT location FROM outings.trips WHERE id=%s" %(n))
-    
+
     for (location) in cursor:
+        print location
         location = str(location).replace('\\n',' ')
         location = location[3:len(location)-3]
         coord=getCoords(location)
+        print coord
+        print "UPDATE outings.trips SET coordinates='%s' WHERE id=%s" %(str(coord),n)
+        cursor3.execute('UPDATE outings.trips SET coordinates="%s" WHERE id=%s' %(str(coord),n))
 
-        if set_location:
-            cursor2.execute("UPDATE trips SET location='%s' WHERE id=%s" %(LocList[n-1],n))
-        if set_coords:
-            cursor3.execute("UPDATE trips SET coordinates='%s' WHERE id=%s" %(coord,n))
-        if one_loc:
-            cursor.fetchall()
-        n+=1
-
+cnx.commit()
 cnx.close()
-

@@ -1,6 +1,8 @@
 <div class="trip-item">
   <h2 class="trip-title"><a href="{{url('trip', ['id' => $trip->id])}}">{{$trip->name}}</a></h2>
-  <h4 class="group">Group: <a href="{{url('group', ['id' => $trip->group->id])}}">{{$trip->group->name}}</a></h4>
+  @if(isset($trip->group))
+     <h4 class="group">Group: <a href="{{url('group', ['id' => $trip->group->id])}}">{{$trip->group->name}}</a></h4>
+   @endif
   <div class="row">
     <div class="col-md-4">
       <?php $counter = 0; ?>
