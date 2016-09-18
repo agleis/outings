@@ -18,6 +18,23 @@ footer a {
   font-size: 20px;
 }
 
+a:link {
+  color: #00B050;
+}
+
+a:active {
+  color: #007434;
+}
+
+a:visited {
+  color: #007434;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
 footer a:hover {
   color: #000;
   text-decoration: none;
@@ -92,19 +109,34 @@ footer a:hover {
   border: none;
 }
 
+.btn-success, .btn-success:visited, .btn-success:hover, .btn-success:active {
+  background-color: #00B050 !important;
+  text-decoration: none;
+}
+
+button:focus {
+  outline:0 !important;
+}
+
+
 .btn-primary {
   padding: 20px 10px;
   background-color: red;
+  color: white !important;
   font-size: 24px;
   border: none;
 }
 
-.btn-primary:hover {
-  background-color: darkred;
+.btn-primary:visited {
+  background-color: red !important;
 }
 
-.btn-primary:active {
-  background-color: pink;
+.btn-primary:hover, .btn-primary:active {
+  background-color: #C40000 !important;
+}
+
+.btn-default, .btn-default:visited, .btn-default:hover, .btn-default:active {
+  color: black !important;
 }
 
 .upload-button {

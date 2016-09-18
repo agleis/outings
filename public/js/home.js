@@ -56,7 +56,7 @@ function checkChildren(ul) {
       checked = true;
     }
   });
-  if(checked) ul.parent().find('.sidebar-title').css('color', '#449d44');
+  if(checked) ul.parent().find('.sidebar-title').css('color', '#00B050');
   else ul.parent().find('.sidebar-title').css('color', '#333');
   return num_checked;
 }
