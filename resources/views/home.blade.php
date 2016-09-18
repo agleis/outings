@@ -77,19 +77,19 @@
           </div>
         </div>
       </div>
-      <div class="upload-button">
-        <div class="add-button-group" id="add-group-group" style="display:none;">
-          <div>
-            <label class="add-label" for="add-group">Add Group</label>
-            <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
-          </div>
-        </div>
-        <div class="add-button-group">
-          <div>
-            <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
-            <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
-          </div>
-        </div>
+    </div>
+  </div>
+  <div class="upload-button">
+    <div class="add-button-group" id="add-group-group" style="display:none;">
+      <div>
+        <label class="add-label" for="add-group">Add Group</label>
+        <button type="button" id="add-group" class="btn btn-success add-button"><span class="glyphicon glyphicon-user"></span></button>
+      </div>
+    </div>
+    <div class="add-button-group">
+      <div>
+        <label class="add-label" for="add-trip" style="display:none;">Add Trip</label>
+        <button type="button" id="add-trip" class="btn btn-success add-button"><span class="glyphicon glyphicon-plus"></span></button>
       </div>
     </div>
   </div>
