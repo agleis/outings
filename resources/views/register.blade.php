@@ -76,7 +76,7 @@
                     <a href="{{route('index')}}" class="btn btn-default">Back</a>
                     &nbsp;
                     &nbsp;
-                    <a href="{{route('postRegister')}}" class="btn btn-primary">Sign Up</a>
+                    <input type="submit" name="submit" value="Sign Up" class="btn btn-primary">
                   </div>
               </fieldset>
             </form>

@@ -136,3 +136,20 @@ footer a:hover {
 .message-form textarea {
   width: 70%;
 }
+
+.trip-item {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.trip-item h2 {
+  margin: 0;
+}
+
+.odd {
+  background-color: #eee;
+}
+
+.even {
+  background-color: #ddd;
+}

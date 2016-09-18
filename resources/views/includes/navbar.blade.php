@@ -9,6 +9,7 @@
         </div>
         <div class="col-xs-7">
           @if(Auth::check())
+            <?php $groups = Auth::user()->groups; $trips = Auth::user()->trips; ?>
             <div class="nav">
               <div class="nav-btn">
                 <a class="btn btn-default" href="{{url('home')}}">Home</a>
@@ -38,9 +39,9 @@
       <div class="buttons">
         @if(Auth::check())
           <div class="btn-group">
-            <button type="button" class="btn profile-button dropdown-toggle" data-toggle="dropdown">
+            <a href="{{route('profile', ['id' => Auth::user()->id])}}" class="btn btn-default">
               <span class="glyphicon glyphicon-user"></span>My Profile
-            </button>
+            </a>
             <ul class="dropdown-menu" role="menu">
               <li><a href="{{URL::route('profile', ['id' => Auth::user()->id])}}">Profile</a>
             </ul>

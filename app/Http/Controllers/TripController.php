@@ -81,7 +81,7 @@ class TripController extends Controller
      */
     public function show($id) {
 
-        return view('trip', ['trip' => Trip::find($id)]);
+        return view('trip', ['trip' => Trip::find($id), 'groups' => Group::lists('name', 'id')]);
     }
 
 }

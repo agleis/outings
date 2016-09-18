@@ -20,6 +20,7 @@ Route::any('home', ['as' => 'home', 'uses' => 'HomeController@home']);
 Route::get('filter', ['as' => 'filter', 'uses' => 'HomeController@filter']);
 
 Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
+Route::post('login', ['as' => 'doLogin', 'uses' => 'UserController@doLogin']);
 
 Route::get('register', ['as' => 'register', 'uses' => 'UserController@register']);
 
@@ -34,3 +35,5 @@ Route::post('group', ['as' => 'newGroup', 'uses' => 'GroupController@post']);
 Route::get('group/{id}', ['as' => 'group', 'uses' => 'GroupController@show']);
 Route::get('trip/{id}', ['as' => 'trip', 'uses' => 'TripController@show']);
 Route::get('message/{id}', ['as' => 'message', 'uses' => 'MessageController@post']);
+
+Route::get('profile/{id}', ['as' => 'profile', 'uses' => 'UserController@show']);

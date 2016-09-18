@@ -1,4 +1,4 @@
-<div class="trip-item">
+<div class="trip-item @if($even)even @else odd @endif">
   <h2 class="trip-title"><a href="{{url('trip', ['id' => $trip->id])}}">{{$trip->name}}</a></h2>
   @if(isset($trip->group))
      <h4 class="group">Group: <a href="{{url('group', ['id' => $trip->group->id])}}">{{$trip->group->name}}</a></h4>

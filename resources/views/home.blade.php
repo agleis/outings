@@ -45,6 +45,7 @@
                 'type_road' => 'Road Trip',
                 'type_bike' => 'Cycling',
                 'type_hang' => 'Hangout',
+                'type_business' => 'Business',
                 'type_other' => 'Other'
               ]
             ])
@@ -63,12 +64,15 @@
       </div>
       <div class="col-xs-6 col-xs-offset-1">
         <div class="trip-container">
+          <h1>Trips You May Be Interested In</h1>
           <div class="trips-groups">
             @foreach($group_trips as $trip)
-              @include('includes.trip-info', ['trip' => $trip])
+              @include('includes.trip-info', ['trip' => $trip, 'even' => true])
             @endforeach
+            <?php $i = 0; ?>
             @foreach($trips as $trip)
-              @include('includes.trip-info', ['trip' => $trip])
+              @include('includes.trip-info', ['trip' => $trip, 'even' => $i%2])
+              <?php $i++; ?>
             @endforeach
           </div>
         </div>
